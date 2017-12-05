@@ -1,0 +1,18 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP LED_RGB
+D Led, Tri-Color, 0404, Common-Anode
+K RGB, LED, DIODE, TRI, 
+$ENDCMP
+#
+$CMP LED_RGB_SMLP34RGB1W3
+D Led, Tri-Color, 0404, Common-Anode
+K RGB, LED, DIODE, TRI, 
+$ENDCMP
+#
+$CMP Led_Small
+D Led, Tri-Color, 0404, Common-Anode
+K RGB, LED, DIODE, TRI, 
+$ENDCMP
+#
+#End Doc Library
