@@ -1,0 +1,13 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP Q_NMOS_GSD
+D Transistor N-MOSFET (general)
+K nmos n-mos n-mosfet transistor
+$ENDCMP
+#
+$CMP Q_NMOS_SSM3K09FULF
+D Transistor N-MOSFET, 150mw, 400ma, 1.8VGS
+K nmos n-mos n-mosfet transistor
+$ENDCMP
+#
+#End Doc Library
