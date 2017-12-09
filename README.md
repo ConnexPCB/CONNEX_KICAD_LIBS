@@ -1,2 +1,2 @@
-# ICEE_kicad_libs
+# Connex_kicad_libs
 KiCAD libraries for designs
