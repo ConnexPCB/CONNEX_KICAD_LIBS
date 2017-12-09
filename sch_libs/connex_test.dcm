@@ -1,10 +1,5 @@
 EESchema-DOCLIB  Version 2.0
 #
-$CMP SMD-RES-10K-1%-1_10W_0603_
-D RESISTOR, 150K, 1%, 1/10W, 0603
-K RESISTOR, 150K, 1%, 1/10W, 0603
-$ENDCMP
-#
 $CMP test_point_smt
 D test point, smt
 K test, point
