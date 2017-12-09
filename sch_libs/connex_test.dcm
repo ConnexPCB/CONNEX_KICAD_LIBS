@@ -5,9 +5,9 @@ D RESISTOR, 150K, 1%, 1/10W, 0603
 K RESISTOR, 150K, 1%, 1/10W, 0603
 $ENDCMP
 #
-$CMP SMD-RES-261K-1%-1_10W_0603_
-D RESISTOR, 150K, 1%, 1/10W, 0603
-K RESISTOR, 150K, 1%, 1/10W, 0603
+$CMP test_point_smt
+D test point, smt
+K test, point
 $ENDCMP
 #
 #End Doc Library

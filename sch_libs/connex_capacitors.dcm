@@ -20,6 +20,11 @@ D Ceramic Capacitor, 1UF, 0603, 10V, 10%, X7R
 K C CAP, 1uf, 
 $ENDCMP
 #
+$CMP connex_cap_30PF_0603_50V
+D Ceramic Capacitor, 0.1UF, 0603, 10V, 10%, X7R
+K C CAP, 0.1uf, 100NF
+$ENDCMP
+#
 $CMP connex_cap_4U7_0603_6V3
 D Ceramic Capacitor, 4.7UF, 0603, 6.3V, 20%, X5R
 K C CAP, 4.7uf, 
