@@ -46,6 +46,10 @@ D Resistor, 324KΩ, 1%, 1/10W, 0603
 K r, res, 324k
 $ENDCMP
 #
+$CMP CONNEX-SMD-RES-33-0402
+D Resistor, 33Ω, 1%, 1/10W, 0402
+$ENDCMP
+#
 $CMP CONNEX-SMD-RES-40R2-0603
 D Resistor, 40.2Ω, 1%, 1/10W, 0603
 $ENDCMP

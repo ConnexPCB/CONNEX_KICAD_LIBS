@@ -4,4 +4,9 @@ $CMP CONN_01X06_M50-3530642
 D Connector 01x06
 $ENDCMP
 #
+$CMP connex_usb_micro_b_10103594-0001LF
+D CONNECTOR, USB, MICRO B
+K USB USB_B
+$ENDCMP
+#
 #End Doc Library
