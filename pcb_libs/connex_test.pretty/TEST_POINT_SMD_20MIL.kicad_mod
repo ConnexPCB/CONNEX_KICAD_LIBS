@@ -1,6 +1,6 @@
-(module TEST_POINT_SMD_20MIL (layer F.Cu) (tedit 5A2B698C)
-  (fp_text reference REF** (at 0 1) (layer F.SilkS)
-    (effects (font (size 0.2 0.2) (thickness 0.05)))
+(module TEST_POINT_SMD_20MIL (layer F.Cu) (tedit 5A459D86)
+  (fp_text reference REF** (at 0.1 1.2) (layer F.SilkS)
+    (effects (font (size 0.6 0.6) (thickness 0.125)))
   )
   (fp_text value TEST_POINT_SMD_1MM (at 0 -0.5) (layer F.Fab) hide
     (effects (font (size 1 1) (thickness 0.15)))
