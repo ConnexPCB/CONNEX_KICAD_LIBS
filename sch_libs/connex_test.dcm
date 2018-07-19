@@ -1,5 +1,10 @@
 EESchema-DOCLIB  Version 2.0
 #
+$CMP CONNEX_TEST_TP-103-03
+D TEST POINT, 1 PIN, TP-103-03
+K TEST, POINT, 1PIN, TP,
+$ENDCMP
+#
 $CMP test_point_smt
 D test point, smt
 K test, point

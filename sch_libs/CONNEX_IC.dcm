@@ -1,0 +1,8 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP connex_CMOD_A7_35T
+D BREAKOUT, CMOD A7-35T, FPGA 48DIP
+K BREAKOUT, CMOD, FPGA, SOC
+$ENDCMP
+#
+#End Doc Library
