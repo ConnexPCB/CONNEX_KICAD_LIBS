@@ -10,6 +10,11 @@ D Led, Tri-Color, 0404, Common-Anode
 K RGB, LED, DIODE, TRI, 
 $ENDCMP
 #
+$CMP Led_Green_0402
+D Led, Green, 0402, D000001
+K LED, GREEN, 0402, D000001
+$ENDCMP
+#
 $CMP Led_Small
 D Led, Tri-Color, 0404, Common-Anode
 K RGB, LED, DIODE, TRI, 
