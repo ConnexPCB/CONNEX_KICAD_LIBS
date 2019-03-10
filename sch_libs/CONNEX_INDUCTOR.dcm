@@ -12,7 +12,7 @@ F https://www.digikey.com/product-detail/en/wurth-electronics-inc/74404043033A/7
 $ENDCMP
 #
 $CMP CONNEX-SMD-INDUCTOR-6R8M-0603
-D Inductor, 6.8µH, 20%, 400mA, 350mΩ, 0603
+D Inductor, 6.8µH, 20%, 1A, 350mΩ, 0603
 $ENDCMP
 #
 #End Doc Library
