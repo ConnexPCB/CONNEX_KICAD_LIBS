@@ -1,5 +1,10 @@
 EESchema-DOCLIB  Version 2.0
 #
+$CMP CONNEX-SMD-RES-0-0603
+D Resistor, 0Ω, Jumper, 1/4W, 0603
+K RES, R, 0, 1/4W, 0603
+$ENDCMP
+#
 $CMP CONNEX-SMD-RES-0R-0402
 D Resistor, 0R, 1%, 1/10W, 0402
 K R, 0R, RES, 0402
