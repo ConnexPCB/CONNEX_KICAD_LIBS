@@ -21,12 +21,12 @@ class Ui_stackedWidget(object):
 		# stackedWidget definition #
 		
         stackedWidget.setObjectName(_fromUtf8("stackedWidget")) 											# Defines the object name of the application as "stackedWidget"
-        stackedWidget.resize(549, 232)																		# Sets the size of the application
+        stackedWidget.setFixedSize(550, 275)	 																	# Sets the size of the application
         self.stackedWidget = stackedWidget																	# Passes the stackedWidget object to be an attribute of the Ui_stackedWidget class
 		
 		# Defines the size policy of the stackedWidget #
 		
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(stackedWidget.sizePolicy().hasHeightForWidth())
@@ -39,21 +39,23 @@ class Ui_stackedWidget(object):
 		
         self.gridLayout_2 = QtWidgets.QGridLayout(self.homePage)													# Defines a QGridLayout for the "homePage" QWidget
         self.gridLayout_2.setObjectName(_fromUtf8("gridLayout_2"))													# Sets the object name of this QGridLayout to be "gridLayout_2"
-		
+
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)	        # Defines the size policy of the QComboBox - Horizontal size is Expanding, Vertical size is Fixed		
+        
         self.hp_lblTitle = QtWidgets.QLabel(self.homePage)															# Defines a QLabel object for the "homePage" QWidget
         self.hp_lblTitle.setObjectName(_fromUtf8("hp_lblTitle"))													# Sets the object name of this QLabel to be named "hp_lblTitle"		
+        self.hp_lblTitle.setSizePolicy(sizePolicy)                                                                  # Sets "sizePolicy" to be associated with "hp_lblTitle"
         font = QtGui.QFont()																						# Defines a font to be associated with the "hp_lblTitle"
         font.setPointSize(11)																							# Sets the font size
         font.setBold(True)																								# Sets the font to be classified as bold
         font.setWeight(75)																								# Sets the font weight
         self.hp_lblTitle.setFont(font)																					# Sets "font" to be associated with "hp_lblTitle"
-        self.gridLayout_2.addWidget(self.hp_lblTitle, 0, 1, 1, 2, QtCore.Qt.AlignHCenter)							# Adds the QLabel to the homePage window with a center horizontal align
+        self.gridLayout_2.addWidget(self.hp_lblTitle, 0, 1, 1, 3, QtCore.Qt.AlignHCenter)							# Adds the QLabel to the homePage window with a center horizontal align
 		
         self.hp_compSelect = QtWidgets.QComboBox(self.homePage)														# Defines a QComboBox object for the "homePage" QWidget
-        self.hp_compSelect.setObjectName(_fromUtf8("hp_compSelect"))												# Sets the object name of this QComboBox to be "hp_compSelect"
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)							# Defines the size policy of the QComboBox - Horizontal size is Fixed, Vertical size is fixed														
+        self.hp_compSelect.setObjectName(_fromUtf8("hp_compSelect"))												# Sets the object name of this QComboBox to be "hp_compSelect"									
         sizePolicy.setHeightForWidth(self.hp_compSelect.sizePolicy().hasHeightForWidth())
-        self.hp_compSelect.setSizePolicy(sizePolicy)																# Sets "sizePolicy" to be associated with "hp_compSelect"
+        self.hp_compSelect.setFixedWidth(160)																        # Sets the width of the QComboBox
         self.hp_compSelect.addItem(_fromUtf8("Select Component"))													# Adds an item to the QComboBox - "Select Component"
         self.hp_compSelect.addItem(_fromUtf8("Resistor"))															# Adds an item to the QComboBox - "Resistor"
         self.hp_compSelect.addItem(_fromUtf8("Capacitor"))															# Adds an item to the QComboBox - "Capacitor"
@@ -63,6 +65,7 @@ class Ui_stackedWidget(object):
 
         self.hp_lblSchDir = QtWidgets.QLabel(self.homePage)													        # Defines a QLabel object for the "homePage" QWidget
         self.hp_lblSchDir.setObjectName(_fromUtf8("hp_lblSchDir"))													# Sets the object name of the QLabel to be "hp_lblSchDir"
+        self.hp_lblSchDir.setSizePolicy(sizePolicy)                                                                 # Sets "sizePolicy" to be associated with "hp_lblSchDir"
         font = QtGui.QFont()																						# Defines a font to be associated with the "hp_lblSchDir"
         font.setPointSize(10)																							# Sets the font size
         font.setBold(True)																								# Sets the font to be classified as bold
@@ -72,15 +75,16 @@ class Ui_stackedWidget(object):
 
         self.hp_leSchDir = QtWidgets.QLineEdit(self.homePage)												        # Defines a QLineEdit object for the "homePage" QWidget
         self.hp_leSchDir.setObjectName(_fromUtf8("hp_leSchDir"))														# Sets the object name of the QLineEdit to be "hp_leSchDir"
-        self.hp_leSchDir.setFixedWidth(150)																				# Sets the width of the QLineEdit
-        self.gridLayout_2.addWidget(self.hp_leSchDir, 2, 1, 1, 1, QtCore.Qt.AlignHCenter)							# Adds the QLabel to the homePage window with a center horizontal align
+        self.hp_leSchDir.setFixedWidth(250)																				# Sets the width of the QLineEdit
+        self.gridLayout_2.addWidget(self.hp_leSchDir, 2, 1, 1, 2, QtCore.Qt.AlignHCenter)							# Adds the QLabel to the homePage window with a center horizontal align
         self.hp_leSchDir.textChanged.connect(self.SchLib)													    # Connects the "hp_leSchDir" QLineEdit to the SchLib function when the QLine edit gets modified
 
         self.hp_btnSchDir = QtWidgets.QPushButton(self.homePage)													# Defines a QPushButton for the "homePage" QWidget
         self.hp_btnSchDir.setObjectName(_fromUtf8("hp_btnSchDir"))											        # Sets the object name of this QPushButton to be "hp_btnSchDir"
+        self.hp_btnSchDir.setFixedWidth(50)                                                                         # Sets the width of the QPushButton
         icon = QtGui.QIcon('file_select_icon.png')                                                                  # Defines an icon to be associated with the "hp_btnSchDir" and provides the reference image file location for the icon
         self.hp_btnSchDir.setIcon(icon)                                                                                 # Sets "icon" to be associated with "hp_btnSchDir"
-        self.gridLayout_2.addWidget(self.hp_btnSchDir, 2, 2, 1, 1)												    # Adds the QPushButton to the homePage window
+        self.gridLayout_2.addWidget(self.hp_btnSchDir, 2, 3, 1, 1)												    # Adds the QPushButton to the homePage window
         self.hp_btnSchDir.clicked.connect(self.SchDir)                                                              # Connects the "hp_btnSchDir" QPushButton to the SchDir function if the QPushButton is clicked
 
         self.hp_lblFpDir = QtWidgets.QLabel(self.homePage)													        # Defines a QLabel object for the "homePage" QWidget
@@ -94,21 +98,22 @@ class Ui_stackedWidget(object):
 
         self.hp_leFpDir = QtWidgets.QLineEdit(self.homePage)												        # Defines a QLineEdit object for the "homePage" QWidget
         self.hp_leFpDir.setObjectName(_fromUtf8("hp_leFpDir"))														# Sets the object name of the QLineEdit to be "hp_leFpDir"
-        self.hp_leFpDir.setFixedWidth(150)																				# Sets the width of the QLineEdit
-        self.gridLayout_2.addWidget(self.hp_leFpDir, 3, 1, 1, 1, QtCore.Qt.AlignHCenter)							# Adds the QLabel to the homePage window with a center horizontal align
+        self.hp_leFpDir.setFixedWidth(250)																				# Sets the width of the QLineEdit
+        self.gridLayout_2.addWidget(self.hp_leFpDir, 3, 1, 1, 2, QtCore.Qt.AlignHCenter)							# Adds the QLabel to the homePage window with a center horizontal align
 
         self.hp_btnFpDir = QtWidgets.QPushButton(self.homePage)													# Defines a QPushButton for the "homePage" QWidget
         self.hp_btnFpDir.setObjectName(_fromUtf8("hp_btnFpDir"))											        # Sets the object name of this QPushButton to be "hp_btnFpDir"
+        self.hp_btnFpDir.setFixedWidth(50)                                                                         # Sets the width of the QPushButton
         icon = QtGui.QIcon('file_select_icon.png')                                                                  # Defines an icon to be associated with the "hp_btnFpDir" and provides the reference image file location for the icon
         self.hp_btnFpDir.setIcon(icon)                                                                                 # Sets "icon" to be associated with "hp_btnFpDir"
-        self.gridLayout_2.addWidget(self.hp_btnFpDir, 3, 2, 1, 1)												    # Adds the QPushButton to the homePage window
+        self.gridLayout_2.addWidget(self.hp_btnFpDir, 3, 3, 1, 1)												    # Adds the QPushButton to the homePage window
         self.hp_btnFpDir.clicked.connect(self.FpDir)                                                              # Connects the "hp_btnFpDir" QPushButton to the FpDir function if the QPushButton is clicked
 
-        spacerItem2 = QtWidgets.QSpacerItem(20, 120, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)			# Defines a QSpacerItem with a size of 20 x 40, a fixed Horizontal length, and minimized Vertical length
+        spacerItem2 = QtWidgets.QSpacerItem(20, 120, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)			# Defines a QSpacerItem with a size of 20 x 120, a fixed Horizontal length, and minimized Vertical length
         self.gridLayout_2.addItem(spacerItem2, 4, 2, 1, 1)															# Adds the QSpacerItem to the homePage window
-        spacerItem4 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)			# Defines a QSpacerItem with a size of 40 x 20, a fixed Horizontal length, and minimized Vertical length
+        spacerItem4 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)			# Defines a QSpacerItem with a size of 40 x 20, a fixed Horizontal length, and minimized Vertical length
         self.gridLayout_2.addItem(spacerItem4, 2, 3, 1, 1)															# Adds the QSpacerItem to the homePage window
-        spacerItem = QtWidgets.QSpacerItem(20, 15, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)				# Defines a QSpacerItem with a size of 40 x 20, a fixed Horizontal length, and minimized Vertical length
+        spacerItem = QtWidgets.QSpacerItem(275, 15, QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)				# Defines a QSpacerItem with a size of 40 x 20, a fixed Horizontal length, and minimized Vertical length
         self.gridLayout_2.addItem(spacerItem, 1, 2, 1, 1)															# Adds the QSpacerItem to the homePage window
 
         stackedWidget.addWidget(self.homePage)																	#Adds the "homePage" QWidget to the application
@@ -145,8 +150,8 @@ class Ui_stackedWidget(object):
 		
         self.res_libSelect = QtWidgets.QComboBox(self.resForm)														# Defines a QComboBox object for the "resForm" QWidget
         self.res_libSelect.setObjectName(_fromUtf8("res_libSelect"))												# Sets the object name of this QWidget to be "res_libSelect"
-        self.gridLayout.addWidget(self.res_libSelect, 2, 0, 1, 1)													# Adds the QComboBox to the resForm window
-        
+        self.gridLayout.addWidget(self.res_libSelect, 2, 0, 1, 3)													# Adds the QComboBox to the resForm window
+   
         self.res_scrollArea = QtWidgets.QScrollArea(self.resForm)													# Defines a QScrollArea for the "resForm" QWidget
         self.res_scrollArea.setObjectName(_fromUtf8("res_scrollArea"))												# Sets the object name for this QScrollArea to be "res_scrollArea"
         self.res_scrollArea.setWidgetResizable(True)																# Sets the QScrollArea to be resizeable
@@ -266,7 +271,7 @@ class Ui_stackedWidget(object):
 		
         self.cap_libSelect = QtWidgets.QComboBox(self.capForm)														# Defines a QComboBox object for the "capForm" QWidget
         self.cap_libSelect.setObjectName(_fromUtf8("cap_libSelect"))												# Sets the object name of this QWidget to be "cap_libSelect"
-        self.gridLayout_3.addWidget(self.cap_libSelect, 2, 0, 1, 1)													# Adds the QComboBox to the capForm window        
+        self.gridLayout_3.addWidget(self.cap_libSelect, 2, 0, 1, 3)													# Adds the QComboBox to the capForm window        
         
         self.cap_scrollArea = QtWidgets.QScrollArea(self.capForm)													# Defines a QScrollArea for the "capForm" QWidget
         self.cap_scrollArea.setObjectName(_fromUtf8("cap_scrollArea"))												# Sets the object name for this QScrollArea to be "cap_scrollArea"
@@ -387,7 +392,7 @@ class Ui_stackedWidget(object):
 		
         self.ind_libSelect = QtWidgets.QComboBox(self.indForm)														# Defines a QComboBox object for the "indForm" QWidget
         self.ind_libSelect.setObjectName(_fromUtf8("ind_libSelect"))												# Sets the object name of this QWidget to be "ind_libSelect"
-        self.gridLayout.addWidget(self.ind_libSelect, 2, 0, 1, 1)													# Adds the QComboBox to the indForm window
+        self.gridLayout.addWidget(self.ind_libSelect, 2, 0, 1, 3)													# Adds the QComboBox to the indForm window
         
         self.ind_scrollArea = QtWidgets.QScrollArea(self.indForm)													# Defines a QScrollArea for the "indForm" QWidget
         self.ind_scrollArea.setObjectName(_fromUtf8("ind_scrollArea"))												# Sets the object name for this QScrollArea to be "ind_scrollArea"
@@ -602,10 +607,19 @@ class Ui_stackedWidget(object):
     def submitForm(self):
 
          if(self.stackedWidget.currentIndex() == 1):
-             print ("Resistor Part Name:", self.res_lePartName.text())
-             print ("Resistor Footprint:", self.res_leFootprint.text())
-             print ("Resistor Value:", self.res_leCompValue.text())
-             print ("Resistor Description:", self.res_leDescription.text())
+             file = self.hp_leSchDir.text() + "/" + self.res_libSelect.currentText()
+             f = open(file, "w")
+             L = self.res_lePartName.text() + "\n" + "newline added"
+             f.write(L)
+             f.close()
+        
+             f = open(file, "r+")
+             print (f.read())
+             f.close()
+             #print ("Resistor Part Name:", self.res_lePartName.text())
+             #print ("Resistor Footprint:", self.res_leFootprint.text())
+             #print ("Resistor Value:", self.res_leCompValue.text())
+             #print ("Resistor Description:", self.res_leDescription.text())
          elif(self.stackedWidget.currentIndex() == 2):
              print ("Capacitor Part Name:", self.cap_lePartName.text())
              print ("Capacitor Footprint:", self.cap_leFootprint.text())
@@ -615,7 +629,7 @@ class Ui_stackedWidget(object):
              print ("Inductor Part Name:", self.ind_lePartName.text())
              print ("Inductor Footprint:", self.ind_leFootprint.text())
              print ("Inductor Value:", self.ind_leCompValue.text())
-             print ("Inductor Description:", self.ind_leDescription.text())
+             print ("Inductor Description:", self.ind_leDescription.text())     
 
     def exitApplication(self):
         
