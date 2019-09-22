@@ -607,19 +607,24 @@ class Ui_stackedWidget(object):
     def submitForm(self):
 
          if(self.stackedWidget.currentIndex() == 1):
+             
+             partName = self.res_lePartName.text()
+             Footprint = self.res_leFootprint.text()
+             compValue = self.res_leCompValue.text()
+             Description = self.res_leDescription.text()
+             resTemplate = ""
+             
              file = self.hp_leSchDir.text() + "/" + self.res_libSelect.currentText()
-             f = open(file, "w")
-             L = self.res_lePartName.text() + "\n" + "newline added"
-             f.write(L)
-             f.close()
-        
-             f = open(file, "r+")
-             print (f.read())
-             f.close()
-             #print ("Resistor Part Name:", self.res_lePartName.text())
-             #print ("Resistor Footprint:", self.res_leFootprint.text())
-             #print ("Resistor Value:", self.res_leCompValue.text())
-             #print ("Resistor Description:", self.res_leDescription.text())
+             with open(file, "r+") as input_data:
+                 for line in input_data:
+                     if line.strip() == "#encoding utf-8":
+                         break
+                 for line in input_data:
+                     resTemplate = resTemplate + line.strip() + "\n"
+                     if line.strip() == "ENDDEF":
+                         break
+             print (resTemplate)
+             
          elif(self.stackedWidget.currentIndex() == 2):
              print ("Capacitor Part Name:", self.cap_lePartName.text())
              print ("Capacitor Footprint:", self.cap_leFootprint.text())
